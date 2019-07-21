@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone', 'https://github.com/Polymer/shop.git']
+  args: ['clone', 'https://source.developers.google.com/p/gcp-demos-229619/r/cloudrundemo']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['install']
 - name: gcr.io/cloud-builders/docker
