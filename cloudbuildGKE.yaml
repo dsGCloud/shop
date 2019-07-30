@@ -3,7 +3,7 @@ steps:
     args: ['clone', '--branch', 'cloudRun', 'https://github.com/dsGCloud/shop.git']
     # Install npm dependencies
   - name: 'gcr.io/cloud-builders/npm'
-    args: ['install']
+    args: ['install', '--save', 'prpl-server']
     # Build polymer application
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
