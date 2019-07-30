@@ -1,5 +1,7 @@
 steps:
     # Install npm dependencies
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['clone', 'https://github.com/dsGCloud/shop.git']
   - name: 'gcr.io/cloud-builders/npm'
     args: ['install']
     # Build polymer application
