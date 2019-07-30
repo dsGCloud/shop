@@ -1,6 +1,4 @@
 steps:
-  - name: 'gcr.io/cloud-builders/git'
-    args: ['clone', 'https://source.developers.google.com/p/riricast/r/riricast']
     # Install npm dependencies
   - name: 'gcr.io/cloud-builders/npm'
     args: ['install']
