@@ -1,0 +1,18 @@
+steps:
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['clone', '--branch', 'cloudRun', 'https://github.com/dsGCloud/shop.git']
+    # Install npm dependencies
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+    # Build polymer application
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build']
+    # Build Docker container
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/shoprun:$REVISION_ID', './']
+    # Push container to gcr.io repo
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ["push", "gcr.io/$PROJECT_ID/shoprun"]
+    # Deploy container image to Cloud Run
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['beta', 'run', 'deploy', 'shop', '--image', 'gcr.io/$PROJECT_ID/shoprun:$REVISION_ID', '--allow-unauthenticated','--region', 'us-central1', '--platform', 'managed']
