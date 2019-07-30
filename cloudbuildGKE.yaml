@@ -13,6 +13,6 @@ steps:
     # Push container to gcr.io repo
   - name: 'gcr.io/cloud-builders/docker'
     args: ["push", "gcr.io/$PROJECT_ID/shoprun"]
-    # Deploy container image to Cloud Run
+    # Deploy container image to Cloud Run in GKE
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['beta', 'run', 'deploy', 'shop', '--image', 'gcr.io/$PROJECT_ID/shoprun:$REVISION_ID', '--allow-unauthenticated','--region', 'us-central1', '--platform', 'managed']
+    args: ['beta', 'run', 'deploy', 'shop', '--image', 'gcr.io/$PROJECT_ID/shoprun:$REVISION_ID', '--allow-unauthenticated','--region', 'us-central1', '--platform', 'gke', '--cluster', 'shop']
