@@ -9,10 +9,10 @@ steps:
   args: ['run', 'build']
   # Build Docker container
 - name: gcr.io/cloud-builders/docker
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/cloudrun-demo:$REVISION_ID', './server']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/shoprun:$REVISION_ID', './server']
   # Push container to gcr.io repo
 - name: 'gcr.io/cloud-builders/docker'
-  args: ["push", "gcr.io/$PROJECT_ID/cloudrun-demo"]
+  args: ["push", "gcr.io/$PROJECT_ID/shoprun"]
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'cloudrun-demo', '--image', 'gcr.io/$PROJECT_ID/cloudrun-demo:$REVISION_ID', '--region', 'us-central1', '--platform', 'managed']
+  args: ['beta', 'run', 'deploy', 'shop', '--image', 'gcr.io/$PROJECT_ID/shoprun-demo:$REVISION_ID', '--region', 'us-central1', '--platform', 'managed']
