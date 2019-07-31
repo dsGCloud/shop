@@ -1,6 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/git'
-    args: ['clone', '--branch', 'cloudRun', 'https://github.com/dsGCloud/shop.git']
+    args: ['clone', 'https://github.com/dsGCloud/shop.git']
     # Install npm dependencies
   - name: 'gcr.io/cloud-builders/npm'
     args: ['install', '--save', 'prpl-server']
