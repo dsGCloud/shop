@@ -7,4 +7,6 @@ steps:
     args: ['run', 'build']
   - name: "gcr.io/cloud-builders/gcloud"
     args: ["app", "deploy", "server/app_std.yaml"]
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: ["app", "deploy", "server/gae-flex/app.yaml"]
 timeout: "1600s"
