@@ -4,6 +4,9 @@ Shop is a sample e-commerce [Progressive Web App](https://developers.google.com/
 
 ![shop screenshot](https://user-images.githubusercontent.com/116360/39545341-c50a9184-4e05-11e8-88e0-0e1f3fa4834b.png)
 
+## We will deploy it from HERE!
+- Just push the change
+
 ## Features/highlights
 
 - a sample e-commerce shopping site
