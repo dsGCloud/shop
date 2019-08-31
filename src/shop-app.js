@@ -305,8 +305,8 @@ class ShopApp extends PolymerElement {
     </iron-pages>
 
     <footer>
-      <a href="https://www.polymer-project.org/3.0/toolbox/">Made by Polymer</a>
-      <div class="demo-label">Demo Only</div>
+      <a href="https://www.polymer-project.org/3.0/toolbox/">This text will</a>
+      <div class="demo-label">Change</div>
     </footer>
 
     <!-- a11y announcer -->
