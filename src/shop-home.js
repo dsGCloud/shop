@@ -122,7 +122,7 @@ class ShopHome extends PolymerElement {
   _visibleChanged(visible) {
     if (visible) {
       this.dispatchEvent(new CustomEvent('change-section', {
-        bubbles: true, composed: true, detail: {title: 'Cloud Run Club'}}));
+        bubbles: true, composed: true, detail: {title: 'Cloud Run CDMX'}}));
     }
   }
 }
